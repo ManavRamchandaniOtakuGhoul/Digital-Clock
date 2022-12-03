@@ -18,14 +18,6 @@ setInterval(function () {
   let mDot = document.querySelector(".m-dot");
   let sDot = document.querySelector(".s-dot");
 
-  hh.style.strokeDashoffset = 440 - (440 * h) / 12; // 12 hour
-  mm.style.strokeDashoffset = 440 - (440 * m) / 60; // 60min
-  ss.style.strokeDashoffset = 440 - (440 * s) / 60; // 60sec
-
-  hDot.style.transform = `rotate(${h * 30}deg)`; //360deg / 12 = 30deg
-  mDot.style.transform = `rotate(${m * 6}deg)`; //360deg / 60 = 6deg
-  sDot.style.transform = `rotate(${s * 6}deg)`; //360deg / 60 = 6deg
-
   // Convert 24hour clock to 12hour clock
 
   if (h > 12) {
@@ -42,4 +34,12 @@ setInterval(function () {
   minute.innerHTML = m;
   second.innerHTML = s;
   ampm.innerHTML = am;
+
+  hh.style.strokeDashoffset = 440 - (440 * h) / 12; // 12 hour
+  mm.style.strokeDashoffset = 440 - (440 * m) / 60; // 60min
+  ss.style.strokeDashoffset = 440 - (440 * s) / 60; // 60sec
+
+  hDot.style.transform = `rotate(${h * 30}deg)`; //360deg / 12 = 30deg
+  mDot.style.transform = `rotate(${m * 6}deg)`; //360deg / 60 = 6deg
+  sDot.style.transform = `rotate(${s * 6}deg)`; //360deg / 60 = 6deg
 });
